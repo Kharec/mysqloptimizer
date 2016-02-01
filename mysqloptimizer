@@ -1,0 +1,89 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import argparse
+import mysql.connector
+
+from sys import exit
+
+# TODO
+#
+# Faire apparaitre les arguments optionnels et les arguments obligatoires
+# Ajouter une option -A pour passer sur toutes les bases de données du serveur
+# Fonction qui va faire l'optimize sur toutes les tables d'une base
+# Fonction qui va récupérer la liste des bases de données du serveur
+# Fonction qui va boucler sur toutes les bases de données et faire les optimize 
+
+# FONCTIONS
+def getAllDatabases(cnx):
+	''' 
+		Fonction qui récupère le nom de toutes
+	    les bases de donnnées présentes sur le 
+	    serveur et renvoie une liste:
+
+	    Paramètre : mysql.connector.connect() cnx
+	    Retourne : liste de str()
+	'''
+
+def optimizeDatabase(cnx):
+	'''
+	    Fonction qui va lancer l'optimize sur 
+	    toutes les tables de la base de donnée
+	    donnée en argument.
+
+	    Paramètre : mysql.connector.connect() cnx
+	    Retourne : True si OK, false si erreur. 
+	'''
+
+def optimizeAllDatabases(sqlUser, sqlPassword, allDatabases):
+	'''
+		Fonction qui va lancer l'optimize sur
+		toutes les tables de toutes les bases 
+		de donnée du serveur
+
+		Paramètre : str sqlUser
+		Paramètre : str sqlPassword
+		Paramètre : str allDatabases
+		Retourne : True si OK, false si erreur.
+	'''
+
+def msg(text):
+	'''
+		Fonction d'affichage de message
+	'''
+	print("[OPTIMIZER] " + msg)
+
+# PROGRAMME PRINCIPAL
+parser = argparse.ArgumentParser(description="mysqloptimizer automatise l'optimisation de vos bases de données.")
+parser.add_argument('-u', '--user', help='Utilisateur SQL')
+parser.add_argument('-p', '--password', help='Mot de passe SQL')
+parser.add_argument('-d', '--database', help='Base de donnée que vous souhaitez optimiser')
+parser.add_argument('-v', '--version', action='store_true', help='Version du script')
+
+args = parser.parse_args()
+version = '0.02'
+
+if args['version']:
+    print(version)
+    exit(0)
+
+if not args['user'] or not args['password']:
+    parser.print_help()
+    exit(1)
+
+user = args['user']
+password = args['password'] 
+
+if args['all']:
+	if not optimizeAllDatabases(user, password, getAllDatabases()):
+		exit(1)
+	
+elif args['database']:
+	database = args['database']
+	cnx = mysql.connector.connect(user=user, password=password, host='127.0.0.1', database=database)
+	if not optimizeDatabase(cnx):
+		exit(1)
+else:
+	parser.print_help()
+	exit(1)
+
+exit(0)
