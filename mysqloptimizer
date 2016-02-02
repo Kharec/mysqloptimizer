@@ -8,7 +8,6 @@ from sys import exit
 # TODO
 #
 # Faire apparaitre les arguments optionnels et les arguments obligatoires
-# Ajouter une option -A pour passer sur toutes les bases de données du serveur
 # Fonction qui va faire l'optimize sur toutes les tables d'une base
 # Fonction qui va récupérer la liste des bases de données du serveur
 # Fonction qui va boucler sur toutes les bases de données et faire les optimize 
@@ -56,6 +55,7 @@ def msg(text):
 parser = argparse.ArgumentParser(description="mysqloptimizer automatise l'optimisation de vos bases de données.")
 parser.add_argument('-u', '--user', help='Utilisateur SQL')
 parser.add_argument('-p', '--password', help='Mot de passe SQL')
+parser.add_argument('-a', '--all', help='Optimiser toutes les tables de toutes les bases de données')
 parser.add_argument('-d', '--database', help='Base de donnée que vous souhaitez optimiser')
 parser.add_argument('-v', '--version', action='store_true', help='Version du script')
 
