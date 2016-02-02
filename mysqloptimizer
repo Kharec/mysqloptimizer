@@ -56,7 +56,7 @@ parser.add_argument('-v', '--version', action='store_true', help='Print version 
 parser.add_argument('-u', '--user', help='SQL user')
 parser.add_argument('-p', '--password', help='SQL password')
 parser.add_argument('-d', '--database', help='Database you want to optimize, or use -a (--all)')
-parser.add_argument('-a', '--all', help='Optimize all tables of all databases')
+parser.add_argument('-a', '--all', action='store_true', help='Optimize all tables of all databases')
 
 args = vars(parser.parse_args())
 version = '0.02'
