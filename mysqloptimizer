@@ -5,6 +5,9 @@ import mysql.connector
 
 from sys import exit
 
+__version__ = '0.03'
+__authors__ = 'Sandro CAZZANIGA <cazzaniga.sandro@gmail.com>'
+
 # TODO
 #
 # Faire apparaitre les arguments optionnels et les arguments obligatoires
@@ -59,10 +62,9 @@ parser.add_argument('-d', '--database', help='Database you want to optimize, or 
 parser.add_argument('-a', '--all', action='store_true', help='Optimize all tables of all databases')
 
 args = vars(parser.parse_args())
-version = '0.02'
 
 if args['version']:
-    msg("version " + version)
+    msg("version " + __version__)
     exit(0)
 
 if not args['user'] or not args['password']:
