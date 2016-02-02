@@ -48,7 +48,7 @@ def msg(text):
 	'''
 		Message display function
 	'''
-	print("[OPTIMIZER] " + msg)
+	print("[OPTIMIZER] " + text)
 
 # PROGRAMME PRINCIPAL
 parser = argparse.ArgumentParser(description="mysqloptimizer automates the optimization of your databases.")
