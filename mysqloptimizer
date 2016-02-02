@@ -52,11 +52,11 @@ def msg(text):
 
 # PROGRAMME PRINCIPAL
 parser = argparse.ArgumentParser(description="mysqloptimizer automates the optimization of your databases.")
+parser.add_argument('-v', '--version', action='store_true', help='Print version and exit')
 parser.add_argument('-u', '--user', help='SQL user')
 parser.add_argument('-p', '--password', help='SQL password')
-parser.add_argument('-a', '--all', help='Optimize all tables of all databases')
 parser.add_argument('-d', '--database', help='Database you want to optimize')
-parser.add_argument('-v', '--version', action='store_true', help='Print version and exit')
+parser.add_argument('-a', '--all', help='Optimize all tables of all databases')
 
 args = vars(parser.parse_args())
 version = '0.02'
