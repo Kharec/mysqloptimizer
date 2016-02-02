@@ -15,49 +15,48 @@ from sys import exit
 # FONCTIONS
 def getAllDatabases(cnx):
 	''' 
-		Fonction qui récupère le nom de toutes
-	    les bases de donnnées présentes sur le 
-	    serveur et renvoie une liste:
+		Function that retrieves the names of all
+		databases these are on the server and returns 
+		a list of these names
 
-	    Paramètre : mysql.connector.connect() cnx
-	    Retourne : liste de str()
+	    Parameter : mysql.connector.connect() cnx
+	    Return : str list
 	'''
 
 def optimizeDatabase(cnx):
 	'''
-	    Fonction qui va lancer l'optimize sur 
-	    toutes les tables de la base de donnée
-	    donnée en argument.
+		Function which will launch optimize on
+		all tables in the database specified in
+		args (via sql connection)
 
-	    Paramètre : mysql.connector.connect() cnx
-	    Retourne : True si OK, false si erreur. 
+	    Parameter : mysql.connector.connect() cnx
+	    Return : True if OK, false if not
 	'''
 
 def optimizeAllDatabases(sqlUser, sqlPassword, allDatabases):
 	'''
-		Fonction qui va lancer l'optimize sur
-		toutes les tables de toutes les bases 
-		de donnée du serveur
+		Function which will launch optimize on
+		all tables in all server's databases
 
-		Paramètre : str sqlUser
-		Paramètre : str sqlPassword
-		Paramètre : str allDatabases
-		Retourne : True si OK, false si erreur.
+		Parameter : str sqlUser
+		Parameter : str sqlPassword
+		Parameter : str allDatabases
+		Return : True if OK, false if not
 	'''
 
 def msg(text):
 	'''
-		Fonction d'affichage de message
+		Message display function
 	'''
 	print("[OPTIMIZER] " + msg)
 
 # PROGRAMME PRINCIPAL
-parser = argparse.ArgumentParser(description="mysqloptimizer automatise l'optimisation de vos bases de données.")
-parser.add_argument('-u', '--user', help='Utilisateur SQL')
-parser.add_argument('-p', '--password', help='Mot de passe SQL')
-parser.add_argument('-a', '--all', help='Optimiser toutes les tables de toutes les bases de données')
-parser.add_argument('-d', '--database', help='Base de donnée que vous souhaitez optimiser')
-parser.add_argument('-v', '--version', action='store_true', help='Version du script')
+parser = argparse.ArgumentParser(description="mysqloptimizer automates the optimization of your databases.")
+parser.add_argument('-u', '--user', help='SQL user')
+parser.add_argument('-p', '--password', help='SQL password')
+parser.add_argument('-a', '--all', help='Optimize all tables of all databases')
+parser.add_argument('-d', '--database', help='Database you want to optimize')
+parser.add_argument('-v', '--version', action='store_true', help='Print version and exit')
 
 args = vars(parser.parse_args())
 version = '0.02'
