@@ -59,7 +59,7 @@ parser.add_argument('-a', '--all', help='Optimiser toutes les tables de toutes l
 parser.add_argument('-d', '--database', help='Base de donnée que vous souhaitez optimiser')
 parser.add_argument('-v', '--version', action='store_true', help='Version du script')
 
-args = parser.parse_args()
+args = vars(parser.parse_args())
 version = '0.02'
 
 if args['version']:
