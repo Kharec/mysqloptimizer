@@ -6,7 +6,7 @@ import mysql.connector
 from sys import exit
 
 __version__ = '0.03'
-__authors__ = 'Sandro CAZZANIGA <cazzaniga.sandro@gmail.com>'
+__author__ = 'Sandro CAZZANIGA <cazzaniga.sandro@gmail.com>'
 
 # TODO
 #
