@@ -12,14 +12,6 @@ __maintainer__ = "Sandro CAZZANIGA"
 __email__ = "cazzaniga.sandro@gmail.com"
 __status__ = "Development"
 
-
-# TODO
-#
-# Faire apparaitre les arguments optionnels et les arguments obligatoires
-# Fonction qui va faire l'optimize sur toutes les tables d'une base
-# Fonction qui va récupérer la liste des bases de données du serveur
-# Fonction qui va boucler sur toutes les bases de données et faire les optimize 
-
 # FUNCTIONS
 def getAllDatabases(cnx):
 	''' 
