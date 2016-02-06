@@ -129,8 +129,10 @@ user = args['user']
 password = args['password'] 
 
 if args['all']:
-    if not optimizeAllDatabases(user, password, getAllDatabases()):
+    sqlcnx = getCnx(user, password, "mysql")
+    if not optimizeAllDatabases(user, password, getAllDatabases(sqlcnx)):
         exit(1)
+    sqlcnx.close()
     
 elif args['database']:
     database = args['database']
