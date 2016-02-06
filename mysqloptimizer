@@ -79,7 +79,7 @@ def optimizeDatabase(user, password, database):
 
     for table in cursor:
         optimizer.execute(optimize + table[0])
-        msg(table[0] + " optimized")
+        msg(database + "." + table[0] + " optimized")
 
     worker.close()
     cnx.close()
