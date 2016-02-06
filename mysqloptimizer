@@ -96,7 +96,7 @@ def optimizeAllDatabases(sqlUser, sqlPassword, allDatabases):
         Return : True if OK, false if not
     '''
     for db in allDatabases:
-        if not optimizeDatabase(db):
+        if not optimizeDatabase(sqlUser, sqlPassword, db):
             return False
 
     return True
