@@ -6,7 +6,7 @@ import re
 
 from sys import exit
 
-__version__ = '0.03'
+__version__ = '0.1'
 __author__ = 'Sandro CAZZANIGA'
 __license__ = "GPLv3+"
 __maintainer__ = "Sandro CAZZANIGA"
