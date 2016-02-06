@@ -15,14 +15,14 @@ __status__ = "Development"
 
 # FUNCTIONS
 def getAllDatabases(cnx):
-	''' 
-		Function that retrieves the names of all
-		databases these are on the server and returns 
-		a list of these names
+    ''' 
+        Function that retrieves the names of all
+        databases these are on the server and returns 
+        a list of these names
 
-	    Parameter : mysql.connector.connect() cnx
-	    Return : str list
-	'''
+        Parameter : mysql.connector.connect() cnx
+        Return : str list
+    '''
     cursor = cnx.cursor()
     query = "SHOW DATABASES"
     cursor.execute(query)
@@ -61,31 +61,31 @@ def getCnx(user, password, database):
     return(cnx)
 
 def optimizeDatabase(cnx):
-	'''
-		Function which will launch optimize on
-		all tables in the database specified in
-		args (via sql connection)
+    '''
+        Function which will launch optimize on
+        all tables in the database specified in
+        args (via sql connection)
 
-	    Parameter : mysql.connector.connect() cnx
-	    Return : True if OK, false if not
-	'''
+        Parameter : mysql.connector.connect() cnx
+        Return : True if OK, false if not
+    '''
 
 def optimizeAllDatabases(sqlUser, sqlPassword, allDatabases):
-	'''
-		Function which will launch optimize on
-		all tables in all server's databases
+    '''
+        Function which will launch optimize on
+        all tables in all server's databases
 
-		Parameter : str sqlUser
-		Parameter : str sqlPassword
-		Parameter : str allDatabases
-		Return : True if OK, false if not
-	'''
+        Parameter : str sqlUser
+        Parameter : str sqlPassword
+        Parameter : str allDatabases
+        Return : True if OK, false if not
+    '''
 
 def msg(text):
-	'''
-		Message display function
-	'''
-	print("[OPTIMIZER] " + text)
+    '''
+        Message display function
+    '''
+    print("[OPTIMIZER] " + text)
 
 # MAIN SOFTWARE
 parser = argparse.ArgumentParser(description="mysqloptimizer automates the optimization of your databases.")
@@ -109,16 +109,16 @@ user = args['user']
 password = args['password'] 
 
 if args['all']:
-	if not optimizeAllDatabases(user, password, getAllDatabases()):
-		exit(1)
-	
+    if not optimizeAllDatabases(user, password, getAllDatabases()):
+        exit(1)
+    
 elif args['database']:
-	database = args['database']
-	cnx = getCnx(user, password, database)
-	if not optimizeDatabase(cnx):
-		exit(1)
+    database = args['database']
+    cnx = getCnx(user, password, database)
+    if not optimizeDatabase(cnx):
+        exit(1)
 else:
-	parser.print_help()
-	exit(1)
+    parser.print_help()
+    exit(1)
 
 exit(0)
