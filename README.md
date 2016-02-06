@@ -6,8 +6,10 @@ mysqloptimizer - automate the "OPTIMIZE TABLE" statement to all tables (of all y
 
 0.1
 
-# DEPENDENCIES
+# DEPENDENCIES / INSTALLATION
 mysql.connector (https://dev.mysql.com/downloads/connector/python/)
+
+To install this script, just drop it in a directory that's in your $PATH.
 
 # SUMMARY
 
