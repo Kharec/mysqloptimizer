@@ -4,7 +4,7 @@ mysqloptimizer - automate the "OPTIMIZE TABLE" statement to all tables (of all y
 
 # VERSION
 
-Development isn't done for now, more to come soon...
+0.1
 
 # SUMMARY
 
