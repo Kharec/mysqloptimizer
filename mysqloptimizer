@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import argparse
 import mysql.connector
+import re
 
 from sys import exit
 
@@ -22,6 +23,18 @@ def getAllDatabases(cnx):
 	    Parameter : mysql.connector.connect() cnx
 	    Return : str list
 	'''
+    cursor = cnx.cursor()
+    query = "SHOW DATABASES"
+    cursor.execute(query)
+
+    databases = list()
+    pattern = re.compile('^(.*)schema$')
+
+    for db in cursor:
+        if not pattern.match(db[0]):
+            databases.append(db[0])
+
+    return(databases)
 
 def getCnx(user, password, database):
     '''
