@@ -49,7 +49,7 @@ def getCnx(user, password, database):
 
     try:
         cnx = mysql.connector.connect(user=user, password=password, 
-                                        host='localhost', database=database)
+                                        host='localhost', database=database, buffered=True)
     except mysql.connector.Error as err:
         if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
             msg("Something is wrong with your user name or password")
