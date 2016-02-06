@@ -80,6 +80,11 @@ def optimizeAllDatabases(sqlUser, sqlPassword, allDatabases):
         Parameter : str allDatabases
         Return : True if OK, false if not
     '''
+    for db in allDatabases:
+        if not optimizeDatabase(db):
+            return False
+
+    return True
 
 def msg(text):
     '''
