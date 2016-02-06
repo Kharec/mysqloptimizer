@@ -60,13 +60,16 @@ def getCnx(user, password, database):
         exit(1)
     return(cnx)
 
-def optimizeDatabase(cnx):
+def optimizeDatabase(user, password, database):
     '''
         Function which will launch optimize on
         all tables in the database specified in
         args (via sql connection)
 
-        Parameter : mysql.connector.connect() cnx
+        Parameter : str user
+        Parameter : str password
+        Parameter : str database
+
         Return : True if OK, false if not
     '''
 
