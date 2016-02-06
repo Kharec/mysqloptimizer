@@ -6,6 +6,9 @@ mysqloptimizer - automate the "OPTIMIZE TABLE" statement to all tables (of all y
 
 0.1
 
+# DEPENDENCIES
+mysql.connector (https://dev.mysql.com/downloads/connector/python/)
+
 # SUMMARY
 
 usage: mysqloptimizer [-h] [-v] [-u USER] [-p PASSWORD] [-d DATABASE] [-a]
