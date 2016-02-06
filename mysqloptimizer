@@ -72,6 +72,23 @@ def optimizeDatabase(user, password, database):
 
         Return : True if OK, false if not
     '''
+    cnx = getCnx(user, password, database)
+    cursor = cnx.cursor()
+    query = "SHOW TABLES"
+
+    optimize = "OPTIMIZE TABLE "
+    worker = getCnx(user, password, database)
+    optimizer = worker.cursor()
+
+    cursor.execute(query)
+
+    for table in cursor:
+        optimizer.execute(optimize + table[0])
+        msg(table[0] + " optimized")
+
+    worker.close()
+    cnx.close()
+    return True
 
 def optimizeAllDatabases(sqlUser, sqlPassword, allDatabases):
     '''
@@ -122,8 +139,7 @@ if args['all']:
     
 elif args['database']:
     database = args['database']
-    cnx = getCnx(user, password, database)
-    if not optimizeDatabase(cnx):
+    if not optimizeDatabase(user, password, database):
         exit(1)
 else:
     parser.print_help()
