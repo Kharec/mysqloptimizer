@@ -13,7 +13,6 @@ To install this script, just do :
 
     chmod +x install.sh
     sudo ./install.sh
- 
 
 # SUMMARY
 
