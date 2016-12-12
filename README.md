@@ -9,7 +9,11 @@ mysqloptimizer - automate the "OPTIMIZE TABLE" statement to all tables (of all y
 # DEPENDENCIES / INSTALLATION
 mysql.connector (https://dev.mysql.com/downloads/connector/python/)
 
-To install this script, just drop it in a directory that's in your $PATH.
+To install this script, just do :
+
+    chmod +x install.sh
+    sudo ./install.sh
+ 
 
 # SUMMARY
 
