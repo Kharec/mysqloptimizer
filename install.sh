@@ -12,7 +12,8 @@ cp ./mysqloptimizer /usr/local/bin
 if [[ -f /usr/local/bin/mysqloptimizer ]]
 then
     echo "mysqloptimizer installed !"
-    exit 0
+else
+    echo "mysqloptimizer not installed, there was problem.."
 fi
 
 exit 0
