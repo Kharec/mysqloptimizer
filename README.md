@@ -24,10 +24,10 @@ use mysqloptimizer -h ...
 
 # AUTHOR
 
-Sandro CAZZANIGA <cazzaniga.sandro@gmail.com>
+Sandro CAZZANIGA <sandro@cazzaniga.fr>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2016 by Sandro CAZZANIGA.
+This software is copyright (c) 2016/2017/2018 by Sandro CAZZANIGA.
 
 This is free software; you can redistribute it and/or modify it under the GPLv3 terms.
