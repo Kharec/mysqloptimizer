@@ -10,7 +10,7 @@ __version__ = '0.1'
 __author__ = 'Sandro CAZZANIGA'
 __license__ = "GPLv3+"
 __maintainer__ = "Sandro CAZZANIGA"
-__email__ = "cazzaniga.sandro@gmail.com"
+__email__ = "sandro@cazzaniga.fr"
 __status__ = "Production"
 
 # FUNCTIONS
