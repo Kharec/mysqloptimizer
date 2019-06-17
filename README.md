@@ -24,7 +24,7 @@ use mysqloptimizer -h ...
 
 # AUTHOR
 
-Sandro CAZZANIGA <sandro@cazzaniga.fr>
+Sandro CAZZANIGA <cazzaniga.sandro@gmail.com>
 
 # COPYRIGHT AND LICENSE
 
