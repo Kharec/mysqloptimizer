@@ -28,6 +28,6 @@ Sandro CAZZANIGA <cazzaniga.sandro@gmail.com>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2016/2017/2018/2019 by Sandro CAZZANIGA.
+This software is copyright (c) 2016-2020 by Sandro CAZZANIGA.
 
 This is free software; you can redistribute it and/or modify it under the GPLv3 terms.
